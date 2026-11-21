@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shadow Veil — a top-down stealth game</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+<main class="stage">
+  <canvas id="game" width="960" height="664" aria-label="Shadow Veil stealth game"></canvas>
+  <p class="help">
+    Move <b>WASD / arrows</b> · Sneak <b>Shift</b> · Throw a pebble: <b>click the floor</b> ·
+    Pause <b>P</b> · Mute <b>M</b> · Restart level <b>R</b><br>
+    Stay out of the guards' vision cones. Bushes and shadow hide you.
+    Steal every relic, then reach the glowing exit.
+  </p>
+</main>
+<script type="module">
+  import { bootGame } from './src/main.js';
+
+  const canvas = document.getElementById('game');
+  const game = bootGame(canvas);
+  window.addEventListener('error', (e) => {
+    document.title = 'Shadow Veil — error: ' + e.message;
+  });
+</script>
+</body>
+</html>
