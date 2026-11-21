@@ -1,0 +1,54 @@
+/* Shadow Veil — page chrome around the canvas. The game itself draws
+   everything inside the canvas; this file only centres it on a dark page. */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #0b0d12;
+  color: #e8e6da;
+  font-family: 'Trebuchet MS', Verdana, sans-serif;
+}
+
+.stage {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 18px;
+}
+
+canvas#game {
+  display: block;
+  width: 960px;
+  max-width: 96vw;
+  height: auto;
+  border: 1px solid #2a2f3f;
+  border-radius: 10px;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.6);
+  background: #12141c;
+  cursor: crosshair;
+}
+
+.help {
+  margin: 0;
+  text-align: center;
+  line-height: 1.7;
+  font-size: 14px;
+  color: #9aa0b0;
+}
+
+.help b {
+  color: #e8e6da;
+}
+
+canvas#game:focus-visible {
+  outline: 2px solid #39e6c3;
+  outline-offset: 3px;
+}
